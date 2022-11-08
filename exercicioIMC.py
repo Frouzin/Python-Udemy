@@ -7,12 +7,11 @@ print('{} tem {:.2f} M e pesa {} KG portanto seu imc é {:.1f}'.format(name,altu
 
 if imc <= 18.5:
     print('Você esta abaixo do peso ideal')
-elif imc >=18.5:
+elif imc < 25:
     print('Você está no peso ideal')
-elif imc >= 25:
+elif imc < 30:
     print('Você está com um sobre peso')
-elif imc >= 30 and imc < 40:
+elif imc < 40:
     print('Você está Obeso!')
 else:
     print('Você está com Obesidade Grave!')
-    
