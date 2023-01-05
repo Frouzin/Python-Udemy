@@ -1,12 +1,32 @@
+import os
+
 lista = []
-listanum = enumerate(lista)
 
 while True:
-    condicao = input('selecione uma opção?\n[a]pagar  [l]istar  [i]nserir\n')
+    condicao = input('selecione uma opção?\n[i]nserir [a]pagar  [l]istar \n')
     if condicao == 'i':
-        lista.append(input('Coloque um item na lista:'))
-    if condicao == 'l':
-        for i in lista:
-            print(enumerate(lista))
-    if condicao == 'a':
-        lista.pop(input('escolha o indice que vc deseja apagar'))
+        os.system('cls')
+        item = input('Coloque um item na lista:')
+        lista.append(item)
+    elif condicao == 'l':
+        os.system('cls')
+
+        if len(lista) == 0:
+            print('nada para listar')
+
+        for i, valor in enumerate(lista):
+            print(i, valor)
+    elif condicao == 'a':
+        indice_apagar = input('digite qual o numero do item que você quer apagar: ')
+        
+        try:
+            indice = str(indice_apagar)
+            del lista[indice]
+        except:
+            print('Não foi possivel apagar esse item!')
+
+
+        # lista.pop(input('escolha o indice que vc deseja apagar'))
+    else:
+        os.system('cls')
+        print('Escolha as letras [i], [a] ou [l]')
